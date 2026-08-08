@@ -105,3 +105,15 @@ h2 {
 .hindi {
     font-size: 15px;
 }
+
+#title {
+    color: #1b5e20;
+}
+
+#subtitle {
+    color: #333;
+}
+
+#message {
+    line-height: 1.6;
+}

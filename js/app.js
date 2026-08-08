@@ -31,18 +31,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         if (!courier) {
             showError(
-                "Courier Not Recognized",
-                "कूरियर की पहचान नहीं हो सकी",
-                "This tracking link contains an unrecognized courier."
+                "INVALID LINK",
+                "अमान्य लिंक"
             );
             return;
         }
 
         if (!route.trackingNumber.trim()) {
             showError(
-                "Tracking Number Missing",
-                "ट्रैकिंग नंबर उपलब्ध नहीं है",
-                "This tracking link does not contain a docket number."
+                "INVALID LINK",
+                "अमान्य लिंक"
             );
             return;
         }
@@ -66,14 +64,21 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 
-function showError(title, subtitle, message) {
+function showError(title, subtitle) {
 
-    document.getElementById("title").textContent = title;
+    document.getElementById("title").textContent =
+        title;
 
-    document.getElementById("subtitle").textContent = subtitle;
+    document.getElementById("subtitle").textContent =
+        subtitle;
 
-    document.getElementById("message").textContent = message;
+    document.getElementById("message").style.display =
+        "none";
 
-    document.getElementById("loader").style.display = "none";
+    document.getElementById("loader").style.display =
+        "none";
+
+    document.querySelector(".details").style.display =
+        "none";
 
 }

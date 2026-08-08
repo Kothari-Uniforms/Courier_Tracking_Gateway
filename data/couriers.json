@@ -3,5 +3,12 @@
         "name": "ST Courier",
         "method": "SERVER",
         "worker": "https://kothari-tracking-gateway.digital-kothariuniforms.workers.dev/"
+    },
+
+    "dtdc": {
+        "name": "DTDC Courier",
+        "method": "GET",
+        "front": "https://www.dtdc.com/track-your-shipment/?awb=",
+        "back": ""
     }
 }

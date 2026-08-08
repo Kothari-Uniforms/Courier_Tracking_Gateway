@@ -11,8 +11,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
-    document.getElementById("courier").textContent =
-        route.courier.toUpperCase();
 
     document.getElementById("tracking").textContent =
         route.trackingNumber;
@@ -29,6 +27,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const courier = couriers[route.courier];
 
+
         if (!courier) {
             showError(
                 "INVALID LINK",
@@ -36,6 +35,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             );
             return;
         }
+
+        document.getElementById("courier").textContent =
+            courier.name;
 
         if (!route.trackingNumber.trim()) {
             showError(

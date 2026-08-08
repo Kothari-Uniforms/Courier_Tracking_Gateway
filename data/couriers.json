@@ -11,4 +11,11 @@
         "front": "https://www.dtdc.com/track-your-shipment/?awb=",
         "back": ""
     }
+
+    "ekat": {
+        "name": "eKart Logistics",
+        "method": "GET",
+        "front": "https://ekartlogistics.com/ekartlogistics-web/shipmenttrack/",
+        "back": ""
+    }
 }

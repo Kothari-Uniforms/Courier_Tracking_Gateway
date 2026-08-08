@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
     const route = getRoute();
 
@@ -17,6 +17,37 @@ document.addEventListener("DOMContentLoaded", () => {
         route.trackingNumber;
 
     document.getElementById("status").textContent =
-        "Route loaded successfully.";
+        "Finding courier...";
+
+    try {
+
+        const response = await fetch("data/couriers.json");
+
+        if (!response.ok) {
+            throw new Error("Could not load courier configuration.");
+        }
+
+        const couriers = await response.json();
+
+        const courier = couriers[route.courier];
+
+        if (!courier) {
+            throw new Error(
+                "Courier '" + route.courier + "' is not configured."
+            );
+        }
+
+        document.getElementById("status").textContent =
+            "Redirecting to " + courier.name + "...";
+
+        redirectToCourier(route, courier);
+
+    } catch (error) {
+
+        document.getElementById("status").textContent =
+            error.message;
+
+        console.error(error);
+    }
 
 });

@@ -10,7 +10,7 @@
         "method": "GET",
         "front": "https://www.dtdc.com/track-your-shipment/?awb=",
         "back": ""
-    }
+    },
 
     "ekat": {
         "name": "eKart Logistics",

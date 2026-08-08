@@ -1,33 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kothari Uniforms Tracking Gateway</title>
-    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Kothari Uniforms - Tracking</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
 </head>
 
 <body>
 
-<div class="card">
-    <h1 id="title">Courier Tracking Gateway</h1>
+    <div class="loading-card">
 
-    <p>
-    <b>Courier:</b>
-    <span id="courier">Loading...</span>
-    </p>
+        <img
+            src="assets/kothari-logo.jpg"
+            alt="Kothari Uniforms logo"
+            class="logo"
+        >
 
-    <p>
-    <b>Tracking Number:</b>
-    <span id="tracking">Loading...</span>
-    </p>
+        <h1>Loading Details...</h1>
 
-    <p id="status">
-    Reading URL...
-    </p>
-</div>
+        <h2>कृपया प्रतीक्षा करें...</h2>
+
+        <div class="loader"></div>
+
+        <div class="details">
+
+            <p>
+                <strong>Courier:</strong>
+                <span id="courier">Loading...</span>
+            </p>
+
+            <p>
+                <strong>Docket Number:</strong>
+                <span id="tracking">Loading...</span>
+            </p>
+
+        </div>
+
+        <p class="message">
+            Please wait while we fetch your shipment details.
+        </p>
+
+        <p class="message hindi">
+            कृपया प्रतीक्षा करें, हम आपके शिपमेंट की जानकारी प्राप्त कर रहे हैं।
+        </p>
+
+    </div>
+
     <script src="js/router.js"></script>
     <script src="js/redirect.js"></script>
     <script src="js/app.js"></script>
+
 </body>
+
 </html>

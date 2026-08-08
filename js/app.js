@@ -4,20 +4,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (!route) {
 
-        document.getElementById("status").textContent =
-            "No tracking information found.";
+        document.getElementById("courier").textContent =
+            "Unknown";
+
+        document.getElementById("tracking").textContent =
+            "Not found";
 
         return;
     }
 
     document.getElementById("courier").textContent =
-        route.courier;
+        route.courier.toUpperCase();
 
     document.getElementById("tracking").textContent =
         route.trackingNumber;
-
-    document.getElementById("status").textContent =
-        "Finding courier...";
 
     try {
 
@@ -37,15 +37,24 @@ document.addEventListener("DOMContentLoaded", async () => {
             );
         }
 
-        document.getElementById("status").textContent =
-            "Redirecting to " + courier.name + "...";
+        /*
+         * Small delay so the customer actually sees
+         * the loading screen before navigation begins.
+         */
 
-        redirectToCourier(route, courier);
+        setTimeout(() => {
+
+            redirectToCourier(route, courier);
+
+        }, 700);
 
     } catch (error) {
 
-        document.getElementById("status").textContent =
-            error.message;
+        document.getElementById("courier").textContent =
+            "Error";
+
+        document.getElementById("tracking").textContent =
+            route.trackingNumber;
 
         console.error(error);
     }

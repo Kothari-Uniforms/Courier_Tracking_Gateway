@@ -14,26 +14,38 @@ function redirectToCourier(route, courier) {
 
     if (courier.method === "POST") {
 
-        const form = document.createElement("form");
+    const iframe = document.createElement("iframe");
 
-        form.method = "POST";
-        form.action = courier.action;
-        form.style.display = "none";
+    iframe.name = "trackingFrame";
+    iframe.style.display = "none";
 
-        const input = document.createElement("input");
+    document.body.appendChild(iframe);
 
-        input.type = "hidden";
-        input.name = courier.field;
-        input.value = route.trackingNumber;
+    const form = document.createElement("form");
 
-        form.appendChild(input);
+    form.method = "POST";
+    form.action = courier.action;
+    form.target = "trackingFrame";
+    form.style.display = "none";
 
-        document.body.appendChild(form);
+    const input = document.createElement("input");
 
-        form.submit();
+    input.type = "hidden";
+    input.name = courier.field;
+    input.value = route.trackingNumber;
 
-        return;
-    }
+    form.appendChild(input);
+
+    document.body.appendChild(form);
+
+    form.submit();
+
+    setTimeout(() => {
+        window.location.href = "https://stcourier.com/track/shipment/";
+    }, 2000);
+
+    return;
+}
 
     throw new Error("Unsupported courier method.");
 }

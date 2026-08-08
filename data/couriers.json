@@ -1,0 +1,8 @@
+{
+    "st": {
+        "name": "ST Courier",
+        "method": "POST",
+        "action": "https://stcourier.com/track/doCheck",
+        "field": "awb_no"
+    }
+}

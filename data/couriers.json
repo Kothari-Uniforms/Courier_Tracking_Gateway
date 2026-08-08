@@ -1,8 +1,7 @@
 {
     "st": {
         "name": "ST Courier",
-        "method": "POST",
-        "action": "https://stcourier.com/track/doCheck",
-        "field": "awb_no"
+        "method": "SERVER",
+        "worker": "https://kothari-tracking-gateway.digital-kothariuniforms.workers.dev/"
     }
 }

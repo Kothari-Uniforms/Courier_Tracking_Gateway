@@ -14,38 +14,46 @@ function redirectToCourier(route, courier) {
 
     if (courier.method === "POST") {
 
-    const iframe = document.createElement("iframe");
+        const iframe = document.createElement("iframe");
 
-    iframe.name = "trackingFrame";
-    iframe.style.display = "none";
+        iframe.name = "trackingFrame";
+        iframe.style.display = "none";
 
-    document.body.appendChild(iframe);
+        document.body.appendChild(iframe);
 
-    const form = document.createElement("form");
+        const form = document.createElement("form");
 
-    form.method = "POST";
-    form.action = courier.action;
-    form.target = "trackingFrame";
-    form.style.display = "none";
+        form.method = "POST";
+        form.action = courier.action;
+        form.target = "trackingFrame";
+        form.style.display = "none";
 
-    const input = document.createElement("input");
+        const input = document.createElement("input");
 
-    input.type = "hidden";
-    input.name = courier.field;
-    input.value = route.trackingNumber;
+        input.type = "hidden";
+        input.name = courier.field;
+        input.value = route.trackingNumber;
 
-    form.appendChild(input);
+        form.appendChild(input);
 
-    document.body.appendChild(form);
+        document.body.appendChild(form);
 
-    form.submit();
+        form.submit();
 
-    setTimeout(() => {
-        window.location.href = "https://stcourier.com/track/shipment/";
-    }, 2000);
+        return;
+    }
 
-    return;
-}
+    if (courier.method === "SERVER") {
+
+        const url =
+            courier.worker +
+            "?awb=" +
+            encodeURIComponent(route.trackingNumber);
+
+        window.location.href = url;
+
+        return;
+    }
 
     throw new Error("Unsupported courier method.");
 }

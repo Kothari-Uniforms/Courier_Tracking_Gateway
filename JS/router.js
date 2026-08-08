@@ -1,16 +1,21 @@
 function getRoute() {
-    const parts = window.location.pathname
+    const hash = window.location.hash;
+
+    if (!hash.startsWith("#/track/")) {
+        return null;
+    }
+
+    const parts = hash
+        .substring(8)
         .split("/")
         .filter(Boolean);
 
-    const trackIndex = parts.indexOf("track");
-
-    if (trackIndex === -1 || parts.length < trackIndex + 3) {
+    if (parts.length < 2) {
         return null;
     }
 
     return {
-        courier: parts[trackIndex + 1].toLowerCase(),
-        trackingNumber: decodeURIComponent(parts[trackIndex + 2])
+        courier: parts[0].toLowerCase(),
+        trackingNumber: decodeURIComponent(parts[1])
     };
 }

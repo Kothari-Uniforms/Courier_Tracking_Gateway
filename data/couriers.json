@@ -17,5 +17,12 @@
         "method": "GET",
         "front": "https://ekartlogistics.com/ekartlogistics-web/shipmenttrack/",
         "back": ""
+    },
+
+    "delhi": {
+        "name": "Delhivery",
+        "method": "GET",
+        "front": "https://www.delhivery.com/track-v2/package/",
+        "back": ""
     }
 }

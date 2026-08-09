@@ -47,7 +47,9 @@ function redirectToCourier(route, courier) {
 
         const url =
             courier.worker +
-            "?awb=" +
+            "?courier=" +
+            encodeURIComponent(route.courier) +
+            "&awb=" +
             encodeURIComponent(route.trackingNumber);
 
         window.location.href = url;

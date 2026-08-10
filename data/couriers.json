@@ -30,5 +30,11 @@
         "name": "Shadowfax",
         "method": "SERVER",
         "worker": "https://kothari-tracking-gateway.digital-kothariuniforms.workers.dev/"
-}
+    },
+
+    "safex": {
+        "name": "Safexpress",
+        "method": "SERVER",
+        "worker": "https://kothari-tracking-gateway.digital-kothariuniforms.workers.dev/"
+    }
 }

@@ -36,5 +36,12 @@
         "name": "Safexpress",
         "method": "SERVER",
         "worker": "https://kothari-tracking-gateway.digital-kothariuniforms.workers.dev/"
+    },
+
+    "anj": {
+        "name": "Anjani Courier",
+        "method": "GET",
+        "front": "https://shreeanjani.co.in/tracking?awb=",
+        "back": ""
     }
 }

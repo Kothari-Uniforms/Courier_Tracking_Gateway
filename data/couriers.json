@@ -43,5 +43,11 @@
         "method": "GET",
         "front": "https://shreeanjani.co.in/tracking?awb=",
         "back": ""
+    },
+
+    "vrl": {
+        "name": "VRL Logistics",
+        "method": "SERVER",
+        "worker": "https://kothari-tracking-gateway.digital-kothariuniforms.workers.dev/"
     }
 }

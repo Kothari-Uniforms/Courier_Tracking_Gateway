@@ -49,5 +49,11 @@
         "name": "VRL Logistics",
         "method": "SERVER",
         "worker": "https://kothari-tracking-gateway.digital-kothariuniforms.workers.dev/"
+    },
+
+    "akr": {
+        "name": "AKR Express",
+        "method": "SERVER",
+        "worker": "https://kothari-tracking-gateway.digital-kothariuniforms.workers.dev/"
     }
 }
